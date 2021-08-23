@@ -1,0 +1,2 @@
+export const RIVERRACE_DATA = "RIVERRACE_DATA";
+export const RIVERRACE_ERROR = "RIVERRACE_ERROR";

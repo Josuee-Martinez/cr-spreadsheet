@@ -1,38 +1,17 @@
-.App {
-  text-align: center;
+.riverrace-banner {
+   background-color: rgb(79, 145, 225);
+   padding: 1em;
+   color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.collection {
+   margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+i {
+   padding: 0 1em 0 1em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.log-card {
+   margin-bottom: 4em;
 }
