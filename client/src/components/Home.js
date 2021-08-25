@@ -1,5 +1,5 @@
 import React from "react";
-import RiverRaceData from "./riverRaceData/riverRaceLog";
+import RiverRaceData from "./riverRaceData/RiverRaceLog";
 
 const Home = () => {
    return (

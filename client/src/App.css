@@ -13,5 +13,13 @@ i {
 }
 
 .log-card {
+   margin: 4em 0 4em 0;
+}
+
+.fame-table {
    margin-bottom: 4em;
+}
+
+.fas {
+   line-height: none;
 }
