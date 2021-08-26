@@ -1,12 +1,8 @@
 import React from "react";
-import RiverRaceData from "./riverRaceData/RiverRaceLog";
+import RiverRaceData from "./riverRaceLog/RiverRaceLog";
 
 const Home = () => {
-   return (
-      <div className="container">
-         <RiverRaceData />
-      </div>
-   );
+   return <div className="container"></div>;
 };
 
 export default Home;

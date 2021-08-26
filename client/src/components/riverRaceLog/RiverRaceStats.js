@@ -1,22 +1,28 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getRiverRaceData } from "../../actions/riverRaceData";
+import { getRiverRaceLog } from "../../actions/riverRaceLog";
 import { Link } from "react-router-dom";
 
-const RiverRaceStats = ({ getRiverRaceData, riverRaceData, match }) => {
+const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
    useEffect(() => {
-      getRiverRaceData();
-   }, [getRiverRaceData]);
+      getRiverRaceLog();
+   }, [getRiverRaceLog]);
    return (
       <div className="container">
-         <Link to="/" className="waves-effect blue-grey btn log-card">
+         <Link
+            to="/riverracelog"
+            className="waves-effect blue-grey btn log-card"
+         >
             Back to log
          </Link>
          {riverRaceData.items.length === 0
             ? ""
             : riverRaceData.items[match.params.index].standings.map((clan, i) =>
                  clan.clan.name === "Fire and Ice" ? (
-                    <table className="highlight fame-table" key={i}>
+                    <table
+                       className="highlight fame-table blue-grey-text"
+                       key={i}
+                    >
                        <thead>
                           <tr>
                              <th scope="col">#</th>
@@ -52,4 +58,4 @@ const mapStateToProps = (state) => ({
    riverRaceData: state.riverRaceData,
 });
 
-export default connect(mapStateToProps, { getRiverRaceData })(RiverRaceStats);
+export default connect(mapStateToProps, { getRiverRaceLog })(RiverRaceStats);

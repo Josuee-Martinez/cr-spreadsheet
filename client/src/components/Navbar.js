@@ -4,12 +4,15 @@ const Navbar = () => {
    return (
       <nav className="blue-grey">
          <div className="container nav-wrapper">
-            <Link to="/" className="brand-logo">
-               <i className="fas fa-fire-alt"></i>
+            <Link to="/" className="brand-logo left">
+               F I
             </Link>
             <ul id="nav-mobile" className="right">
                <li>
-                  <Link to="/">AT Fame</Link>
+                  <Link to="/riverracelog">War Log</Link>
+               </li>
+               <li>
+                  <Link to="/atfame-spreadsheet">ATF Table</Link>
                </li>
             </ul>
          </div>

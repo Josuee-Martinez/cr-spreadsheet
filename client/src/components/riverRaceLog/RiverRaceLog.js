@@ -3,14 +3,14 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getRiverRaceData } from "../../actions/riverRaceData";
+import { getRiverRaceLog } from "../../actions/riverRaceLog";
 
-const RiverRaceLog = ({ getRiverRaceData, riverRaceData }) => {
+const RiverRaceLog = ({ getRiverRaceLog, riverRaceData }) => {
    useEffect(() => {
-      getRiverRaceData();
-   }, [getRiverRaceData]);
+      getRiverRaceLog();
+   }, [getRiverRaceLog]);
    return (
-      <div>
+      <div className="container">
          {riverRaceData.items.map((item, i) => (
             <div className="log-card" key={i}>
                <div className="riverrace-banner mt-4 blue-grey center-aling">
@@ -19,7 +19,7 @@ const RiverRaceLog = ({ getRiverRaceData, riverRaceData }) => {
                </div>
 
                <div>
-                  <ul className="collection">
+                  <ul className="collection blue-grey-text">
                      {item.standings.map((std, j) => (
                         <li
                            key={j}
@@ -81,7 +81,7 @@ const RiverRaceLog = ({ getRiverRaceData, riverRaceData }) => {
 };
 
 RiverRaceLog.propTypes = {
-   getRiverRaceData: PropTypes.func.isRequired,
+   getRiverRaceLog: PropTypes.func.isRequired,
    riverRaceData: PropTypes.object.isRequired,
 };
 
@@ -89,4 +89,4 @@ const mapStateToProps = (state) => ({
    riverRaceData: state.riverRaceData,
 });
 
-export default connect(mapStateToProps, { getRiverRaceData })(RiverRaceLog);
+export default connect(mapStateToProps, { getRiverRaceLog })(RiverRaceLog);

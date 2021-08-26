@@ -6,8 +6,13 @@ import "./App.css";
 
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import RiverRaceLog from "./components/riverRaceLog/RiverRaceLog";
 
-import RiverRaceStats from "./components/riverRaceData/RiverRaceStats";
+import RiverRaceStats from "./components/riverRaceLog/RiverRaceStats";
+import CurrentRiverRace from "./components/currentRiverRace/CurrentRiverRace";
+import CurrentRiverRaceStats from "./components/currentRiverRace/CurrentRiverRaceStats";
+
+import Atfame from "./components/at-fame/Atfame";
 
 function App() {
    return (
@@ -15,12 +20,21 @@ function App() {
          <Router>
             <Navbar />
             <Switch>
+               <Route exact path="/" component={CurrentRiverRace} />
                <Route exact path="/" component={Home} />
+               <Route exact path="/riverracelog" component={RiverRaceLog} />
+
                <Route
                   exact
                   path="/riverrace/clan/:index"
                   component={RiverRaceStats}
                />
+               <Route
+                  exact
+                  path="/currentriverrace"
+                  component={CurrentRiverRaceStats}
+               />
+               <Route exact path="/atfame-spreadsheet" component={Atfame} />
             </Switch>
          </Router>
       </Provider>
