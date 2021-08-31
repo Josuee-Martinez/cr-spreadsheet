@@ -12,7 +12,11 @@ export default function (state = initialState, action) {
 
    switch (type) {
       case CURRENTRIVERRACE_DATA:
-         console.log(payload);
+         console.log(
+            payload.periodLogs.map((item) =>
+               item.items.filter((item) => item.clan.tag === "#2YRYJG")
+            )
+         );
          return {
             ...state,
             clan: payload,

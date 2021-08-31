@@ -15,7 +15,7 @@ const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
          >
             Back to log
          </Link>
-         {riverRaceData.items.length === 0
+         {riverRaceData.items === null
             ? ""
             : riverRaceData.items[match.params.index].standings.map((clan, i) =>
                  clan.clan.name === "Fire and Ice" ? (
@@ -28,8 +28,8 @@ const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
                              <th scope="col">#</th>
                              <th scope="col">Player</th>
                              <th scope="col">Fame</th>
-                             <th scope="col">Repair Points</th>
-                             <th scope="col">Boat Attacks</th>
+                             <th scope="col">Battle Avg</th>
+                             <th scope="col">Day Avg</th>
                           </tr>
                        </thead>
                        <tbody>
@@ -40,8 +40,11 @@ const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
                                    <td>{i + 1}</td>
                                    <td>{participant.name}</td>
                                    <td>{participant.fame}</td>
-                                   <td>{participant.repairPoints}</td>
-                                   <td>{participant.boatAttacks}</td>
+                                   <td>{participant.fame / 16}</td>
+                                   <td>{participant.fame / 4}</td>
+
+                                   {/* <td>{participant.repairPoints}</td>
+                                   <td>{participant.boatAttacks}</td> */}
                                 </tr>
                              ))}
                        </tbody>

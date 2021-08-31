@@ -27,43 +27,45 @@ const CurrentRiverRace = ({
             </div>
             {currentRiverRaceData.clan === null
                ? ""
-               : currentRiverRaceData.clan.clans.map((item, i) => (
-                    <div key={i}>
-                       <ul className="collection blue-grey-text">
-                          <li
-                             className={
-                                item.name === "Fire and Ice"
-                                   ? "collection-item green accent-2"
-                                   : "collection-item"
-                             }
-                          >
-                             {item.name === "Fire and Ice" ? (
-                                <Link to={`/currentriverrace`}>
+               : currentRiverRaceData.clan.clans
+                    .sort((a, b) => b.periodPoints - a.periodPoints)
+                    .map((item, i) => (
+                       <div key={i}>
+                          <ul className="collection blue-grey-text">
+                             <li
+                                className={
+                                   item.name === "Fire and Ice"
+                                      ? "collection-item green accent-2"
+                                      : "collection-item"
+                                }
+                             >
+                                {item.name === "Fire and Ice" ? (
+                                   <Link to={`/currentriverrace`}>
+                                      <div>
+                                         {item.name}
+                                         <div className="secondary-content blue-grey-text">
+                                            <i className="fas fa-dharmachakra">
+                                               {" "}
+                                               {item.periodPoints}
+                                            </i>
+                                         </div>
+                                      </div>
+                                   </Link>
+                                ) : (
                                    <div>
                                       {item.name}
                                       <div className="secondary-content blue-grey-text">
                                          <i className="fas fa-dharmachakra">
                                             {" "}
-                                            {item.fame}
+                                            {item.periodPoints}
                                          </i>
                                       </div>
                                    </div>
-                                </Link>
-                             ) : (
-                                <div>
-                                   {item.name}
-                                   <div className="secondary-content blue-grey-text">
-                                      <i className="fas fa-dharmachakra">
-                                         {" "}
-                                         {item.fame}
-                                      </i>
-                                   </div>
-                                </div>
-                             )}
-                          </li>
-                       </ul>
-                    </div>
-                 ))}
+                                )}
+                             </li>
+                          </ul>
+                       </div>
+                    ))}
          </div>
       </div>
    );
