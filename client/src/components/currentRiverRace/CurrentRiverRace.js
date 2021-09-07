@@ -10,6 +10,7 @@ const CurrentRiverRace = ({
 }) => {
    useEffect(() => {
       getCurrentRiverRaceData();
+      console.log(currentRiverRaceData);
    }, [getCurrentRiverRaceData]);
    return (
       <div className="container">

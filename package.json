@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "config": "^3.3.6",
+    "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.2"

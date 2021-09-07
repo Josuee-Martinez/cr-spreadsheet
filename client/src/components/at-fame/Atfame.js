@@ -9,7 +9,7 @@ const Atfame = ({ riverRaceData, getRiverRaceLog }) => {
    }, [getRiverRaceLog]);
    return (
       <div className="container">
-         {riverRaceData.items[0] === undefined
+         {/* {riverRaceData.items[0] === undefined
             ? ""
             : console.log(
                  riverRaceData.items[0].createdDate,
@@ -22,7 +22,7 @@ const Atfame = ({ riverRaceData, getRiverRaceLog }) => {
                           participant.fame
                        )
                     )
-              )}
+              )} */}
       </div>
    );
 };
