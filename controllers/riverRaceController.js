@@ -4,10 +4,11 @@ const router = Router();
 const Spreadsheet = require("../models/Spreadsheet");
 
 router.get("/", async (req, res) => {
+   const key = `${process.env.API_KEY}`;
    try {
       const config = {
          headers: {
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            Authorization: `Bearer ${key}`,
          },
       };
 
@@ -18,7 +19,7 @@ router.get("/", async (req, res) => {
 
       res.json(response.data);
    } catch (error) {
-      console.error(error.message);
+      console.error(error.message, "h");
    }
 });
 

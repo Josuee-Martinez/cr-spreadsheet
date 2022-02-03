@@ -4,13 +4,13 @@ const SpreadsheetSchema = new mongoose.Schema({
    tag: {
       type: String,
    },
-   player: {
-      type: String,
-   },
-   numberOfWars: {
+   battles: {
       type: Number,
    },
-   atFame: {
+   name: {
+      type: String,
+   },
+   fame: {
       type: Number,
    },
 });

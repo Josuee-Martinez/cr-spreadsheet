@@ -11,25 +11,23 @@ const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
       <div className="container">
          <Link
             to="/riverracelog"
-            className="waves-effect blue-grey btn log-card"
+            className="waves-effect blue-grey darken-4 btn"
          >
-            Back to log
+            <i className="fas fa-arrow-left"></i>
          </Link>
+
          {riverRaceData.items === null
             ? ""
             : riverRaceData.items[match.params.index].standings.map((clan, i) =>
                  clan.clan.name === "Fire and Ice" ? (
-                    <table
-                       className="highlight fame-table blue-grey-text"
-                       key={i}
-                    >
+                    <table className="highlight fame-table bg-bluegrey" key={i}>
                        <thead>
                           <tr>
                              <th scope="col">#</th>
                              <th scope="col">Player</th>
                              <th scope="col">Fame</th>
-                             <th scope="col">Battle Avg</th>
                              <th scope="col">Day Avg</th>
+                             <th scope="col">Battle Avg</th>
                           </tr>
                        </thead>
                        <tbody>
@@ -40,8 +38,8 @@ const RiverRaceStats = ({ getRiverRaceLog, riverRaceData, match }) => {
                                    <td>{i + 1}</td>
                                    <td>{participant.name}</td>
                                    <td>{participant.fame}</td>
-                                   <td>{participant.fame / 16}</td>
                                    <td>{participant.fame / 4}</td>
+                                   <td>{participant.fame / 16}</td>
 
                                    {/* <td>{participant.repairPoints}</td>
                                    <td>{participant.boatAttacks}</td> */}

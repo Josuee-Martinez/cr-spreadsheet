@@ -1,19 +1,23 @@
-import React from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
    return (
-      <nav className="blue-grey">
+      <nav className="blue-grey darken-4">
          <div className="container nav-wrapper">
-            <Link to="/" className="brand-logo left">
-               F I
+            <Link to="/" className="left">
+               <i className="fas fa-fire-alt"></i>
             </Link>
-            <ul id="nav-mobile" className="right">
+            <ul id="nav-mobile" className="right ">
                <li>
-                  <Link to="/riverracelog">War Log</Link>
+                  <Link to="/currentrace">War</Link>
                </li>
                <li>
-                  <Link to="/atfame-spreadsheet">ATF Table</Link>
+                  <Link to="/riverracelog">WarLog</Link>
                </li>
+               {/* <li>
+                  <Link to="/atfame-spreadsheet">ATF</Link>
+               </li> */}
             </ul>
          </div>
       </nav>

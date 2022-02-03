@@ -12,21 +12,19 @@ const CurrentRiverRaceStats = ({
    }, [getCurrentRiverRaceData]);
    return (
       <div className="container">
-         <Link to="/" className="waves-effect blue-grey btn log-card">
-            Back
+         <Link to="/" className="waves-effect blue-grey darken-4 btn">
+            <i className="fas fa-arrow-left"></i>
          </Link>
          {console.log(currentRiverRaceData)}
          {currentRiverRaceData.clan === null ? (
             ""
          ) : (
-            <table className="highlight fame-table blue-grey-text">
+            <table className="highlight fame-table bg-bluegrey">
                <thead>
                   <tr>
                      <th scope="col">#</th>
                      <th scope="col">Player</th>
                      <th scope="col">Fame</th>
-                     <th scope="col">Battle Avg</th>
-                     <th scope="col">Day Avg</th>
                   </tr>
                </thead>
                <tbody>
@@ -37,8 +35,6 @@ const CurrentRiverRaceStats = ({
                            <td>{i + 1}</td>
                            <td>{participant.name}</td>
                            <td>{participant.fame}</td>
-                           <td>{participant.fame / 16}</td>
-                           <td>{participant.fame / 4}</td>
                         </tr>
                      ))}
                </tbody>

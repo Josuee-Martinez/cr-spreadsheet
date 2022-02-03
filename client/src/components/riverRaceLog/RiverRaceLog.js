@@ -14,8 +14,8 @@ const RiverRaceLog = ({ getRiverRaceLog, riverRaceData }) => {
          {riverRaceData.items === null
             ? ""
             : riverRaceData.items.map((item, i) => (
-                 <div className="log-card" key={i}>
-                    <div className="riverrace-banner mt-4 blue-grey center-aling">
+                 <div className="mt" key={i}>
+                    <div className="riverrace-banner blue-grey darken-4">
                        <Moment fromNow>{item.createdDate}</Moment>
                        <span className="right">
                           Week {item.sectionIndex + 1}
@@ -23,21 +23,21 @@ const RiverRaceLog = ({ getRiverRaceLog, riverRaceData }) => {
                     </div>
 
                     <div>
-                       <ul className="collection blue-grey-text">
+                       <ul className="collection bg-bluegrey">
                           {item.standings.map((std, j) => (
                              <li
                                 key={j}
                                 className={
                                    std.clan.name === "Fire and Ice"
-                                      ? "collection-item green accent-2"
+                                      ? "collection-item light-blue lighten-4"
                                       : "collection-item"
                                 }
                              >
                                 {std.clan.name === "Fire and Ice" ? (
                                    <Link to={`/riverrace/clan/${i}`}>
-                                      <div>
+                                      <div className="bg-bluegrey">
                                          {std.clan.name}
-                                         <div className="secondary-content blue-grey-text">
+                                         <div className="secondary-content bg-bluegrey">
                                             <i className="fas fa-dharmachakra">
                                                {" "}
                                                {std.clan.fame}
@@ -48,7 +48,7 @@ const RiverRaceLog = ({ getRiverRaceLog, riverRaceData }) => {
                                 ) : (
                                    <div>
                                       {std.clan.name}
-                                      <div className="secondary-content blue-grey-text">
+                                      <div className="secondary-content bg-bluegrey">
                                          <i className="fas fa-dharmachakra">
                                             {" "}
                                             {std.clan.fame}
@@ -59,7 +59,7 @@ const RiverRaceLog = ({ getRiverRaceLog, riverRaceData }) => {
                              </li>
                           ))}
                        </ul>
-                       <div className="riverrace-banner blue-grey">
+                       <div className="riverrace-banner blue-grey darken-4">
                           <i className="fas fa-trophy">
                              {" "}
                              {

@@ -3,10 +3,11 @@ const axios = require("axios");
 const router = Router();
 
 router.get("/", async (req, res) => {
+   const key = `${process.env.API_KEY}`;
    try {
       const config = {
          headers: {
-            Authorization: `Bearer ${process.env.API_KEY}`,
+            Authorization: `Bearer ${key}`,
          },
       };
 
@@ -17,7 +18,7 @@ router.get("/", async (req, res) => {
 
       res.json(response.data);
    } catch (error) {
-      console.error(error.message);
+      console.error(error, "f");
    }
 });
 

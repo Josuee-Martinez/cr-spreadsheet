@@ -5,11 +5,11 @@ const Spreadsheet = require("../models/Spreadsheet");
 
 router.get("/", async (req, res) => {
    try {
-      const atFame = await Spreadsheet.find();
+      const spreadsheetData = await Spreadsheet.find({});
 
-      res.json(atFame);
+      res.json(spreadsheetData);
    } catch (error) {
-      console.error(error.message);
+      console.error(error.message, "k");
    }
 });
 
