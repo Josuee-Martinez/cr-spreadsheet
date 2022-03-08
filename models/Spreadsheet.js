@@ -13,6 +13,7 @@ const SpreadsheetSchema = new mongoose.Schema({
    fame: {
       type: Number,
    },
+   clanTag: String,
 });
 
 module.exports = Spreadsheet = mongoose.model("spreadsheet", SpreadsheetSchema);

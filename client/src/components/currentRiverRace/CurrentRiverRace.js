@@ -26,7 +26,9 @@ const CurrentRiverRace = ({
       console.log(currentRiverRaceData);
 
       //Remember to chek this log on war days !!!
-      console.log(spreadsheetData);
+      // console.log(
+      //    spreadsheetData.data.filter((plyr) => plyr.clanTag === "#2YRYJG")
+      // );
    };
 
    const updateData = () => {
